@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/samirsayyad/backup-pg-to-s3/issues"
   },
-  "homepage": "https://github.com/samirsayyad/backup-pg-to-s3#readme"
+  "homepage": "https://github.com/samirsayyad/backup-pg-to-s3#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
