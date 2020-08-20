@@ -10,7 +10,7 @@ echo "Checking Credentials before starting backup"
 mkdir backup_dump
 dump_command="pg_dump -j 12 -Fd -f backup_dump ${args} '${args[2]}' --verbose" 
 echo "Starting ${dump_command}"
-#eval $dump_command
+eval $dump_command
 backup_folder=`ls backup_dump/ | wc -l`
 if [[ backup_folder -gt 0 ]]; then
   echo "PGDUMP Complete"
@@ -19,8 +19,8 @@ else
   exit -1
 fi
 
-now=`date +%d-%m-%Y-%H-%M-%S`
-zipped_filename="$args[2]-$now.tar.gz"
+#now=`date +%d-%m-%Y-%H-%M-%S`
+zipped_filename="backup.tar.gz"
 tar -zcvf $zipped_filename  backup_dump/
 rm -rf backup_dump/
-echo "Completed Backup"
+
